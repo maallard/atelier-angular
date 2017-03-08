@@ -1,0 +1,13 @@
+<h1>Liste Todo</h1>
+
+<h2>Entrez votre todo</h2>
+<input ng-model="newTodo"><button ng-click="addTodo()">Ajouter</button>
+
+<h2 ng-show="todos.length > 0">Votre liste</h2>
+<ul>
+    <li ng-repeat="todo in todos track by $index"><input ng-model="todo"> <button ng-click="editTodo($index, todo)">Editer</button></li>
+</ul>
+
+<ul>
+    <li ng-repeat="todo in todos track by $index">{{todo}} <button ng-click="deleteTodo($index)">Supprimer</button></li>
+</ul>
